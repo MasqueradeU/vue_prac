@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
-    <p>{{ msg }}</p>
+      <input type="text" v-model="msg">
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: 'App',
   data () {
     return {
-      msg: 'Hello Vue.js '
+      msg: 'Hello Vue.js'
     }
   }
 }
