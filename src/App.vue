@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
-      <input type="text" v-model="msg">
+      <button v-on:click="handleclick">Click</button>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   data () {
     return {
       msg: 'Hello Vue.js'
+    }
+  },
+  methods: {
+    handleclick: function (e) {
+      alert('Hello Vue.js in alert')
     }
   }
 }
