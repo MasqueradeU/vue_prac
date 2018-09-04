@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import dBind from './components/dataBinding.vue'
 
 Vue.config.productionTip = false
 
@@ -10,6 +11,12 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: { App, dBind },
   template: '<App/>'
+})
+new Vue({
+  el: '#databinding',
+  router,
+  components: { dBind },
+  template: '<dBind/>'
 })
