@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
-      <button v-on:click="handleclick">Click</button>
+      <button v-if="show">Click show</button>
   </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
   name: 'App',
   data () {
     return {
-      msg: 'Hello Vue.js'
+      msg: 'Hello Vue.js',
+      show: true
     }
   },
   methods: {
