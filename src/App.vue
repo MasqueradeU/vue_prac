@@ -2,7 +2,10 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
-      <button v-if="show">Click show</button>
+      <button v-on:click="show=!show">Fade out show</button>
+      <transition>
+        <p v-if="show">Hello Vue</p>
+      </transition>
   </div>
 </template>
 
@@ -32,5 +35,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.v-enter-active, .v-leave-active {
+  transition: apacity 1s;
+}
+
+.v-enter, .v-leave-go {
+  apacity: 0;
 }
 </style>
