@@ -1,7 +1,7 @@
 <template>
   <div id="databinding">
-    <p>Hello test</p>
-    <input :value="msgf">
+    <p>{{ countClick }}</p>
+    <button v-on:click="increment">Increment click</button>
   </div>
 </template>
 
@@ -10,7 +10,12 @@ export default {
   name: 'databinding',
   data () {
     return {
-      msgf: 'Banana'
+      countClick: 0
+    }
+  },
+  methods: {
+    increment: function () {
+      this.countClick += 1
     }
   }
 }
