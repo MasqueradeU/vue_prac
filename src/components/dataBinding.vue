@@ -1,7 +1,7 @@
 <template>
   <div id="databinding">
     <p>Hello test</p>
-    <input v-bind:value="msgf">
+    <input :value="msgf">
   </div>
 </template>
 
