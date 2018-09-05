@@ -1,12 +1,18 @@
 <template>
   <div id="databinding">
     <p>Hello test</p>
+    <input v-bind:value="msgf">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'databinding'
+  name: 'databinding',
+  data () {
+    return {
+      msgf: 'Banana'
+    }
+  }
 }
 </script>
 
