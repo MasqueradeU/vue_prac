@@ -1,7 +1,6 @@
 <template>
   <div id="databinding">
-    <router-view/>
-      <p>Hello test</p>
+    <p>Hello test</p>
   </div>
 </template>
 
