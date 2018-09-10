@@ -2,15 +2,19 @@
   <div class="databinding">
     <span>count2:{{ count }}</span>
     <button @click="handleclick2($event)">click2</button>
+    <count1
+    @child-incr="childCount"/>
   </div>
 </template>
 
 <script>
-import aP from '../App'
+import co from './count1'
+
 export default {
   components: {
-    ap: aP
+    count1: co
   },
+
   name: 'databinding',
 
   props: {
@@ -19,14 +23,13 @@ export default {
     }
   },
 
-  data () {
-    return {
-      countClick: 0
-    }
-  },
   methods: {
     handleclick2: function (e) {
       this.$emit('child-ev', this.count)
+    },
+
+    childCount: function (e) {
+      this.count += 1
     }
   }
 }
