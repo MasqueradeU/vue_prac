@@ -39,7 +39,7 @@ export default {
       this.msgs[idx].count += 1
     },
     countSynchronized: function (idx, count, e) {
-      this.msgs[idx].count += 1
+      this.msgs[idx].count += count
     }
   }
 }

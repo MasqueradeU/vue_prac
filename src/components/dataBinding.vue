@@ -1,7 +1,7 @@
 <template>
   <div class="databinding">
     <span>count2:{{ count }}</span>
-    <button @click="handleclick2(idx, $event)">click2</button>
+    <button @click="handleclick2($event)">click2</button>
   </div>
 </template>
 
@@ -16,10 +16,6 @@ export default {
   props: {
     count: {
       type: Number
-    },
-
-    idx: {
-      type: Number
     }
   },
 
@@ -29,8 +25,8 @@ export default {
     }
   },
   methods: {
-    handleclick2: function () {
-      this.$emit('child-ev')
+    handleclick2: function (e) {
+      this.$emit('child-ev', this.count)
     }
   }
 }
