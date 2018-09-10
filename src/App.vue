@@ -1,11 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-      <button v-on:click="show=!show">Fade out show</button>
-      <transition>
-        <p v-if="show">Hello Vue</p>
-      </transition>
+    <div class="hoge" v-for="(msg, idx) in msgs" v-bind:key="msg">
+      <span>{{ msg.name }} count:{{ msg.count }}</span>
+      <button @click="handleclick(idx, $event)">click</button>
+    </div>
   </div>
 </template>
 
@@ -14,13 +12,21 @@ export default {
   name: 'App',
   data () {
     return {
-      msg: 'Hello Vue.js',
-      show: true
+      msgs: [{
+        name: 'text1',
+        count: 20
+      }, {
+        name: 'text2',
+        count: 20
+      }, {
+        name: 'text3',
+        count: 20
+      }]
     }
   },
   methods: {
-    handleclick: function (e) {
-      alert('Hello Vue.js in alert')
+    handleclick: function (idx, e) {
+      this.msgs[idx].count += 1
     }
   }
 }
