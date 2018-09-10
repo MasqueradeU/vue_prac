@@ -1,21 +1,36 @@
 <template>
-  <div id="databinding">
-    <p>{{ countClick }}</p>
-    <button v-on:click="increment">Increment click</button>
+  <div class="databinding">
+    <span>count2:{{ count }}</span>
+    <button @click="handleclick2(idx, $event)">click2</button>
   </div>
 </template>
 
 <script>
+import aP from '../App'
 export default {
+  components: {
+    ap: aP
+  },
   name: 'databinding',
+
+  props: {
+    count: {
+      type: Number
+    },
+
+    idx: {
+      type: Number
+    }
+  },
+
   data () {
     return {
       countClick: 0
     }
   },
   methods: {
-    increment: function () {
-      this.countClick += 1
+    handleclick2: function () {
+      this.$emit('child-ev')
     }
   }
 }
