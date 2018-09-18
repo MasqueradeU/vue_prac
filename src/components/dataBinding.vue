@@ -1,6 +1,6 @@
 <template>
   <div class="databinding">
-    <span>normal count:{{ mes ? mes.length : 0 }}</span>
+    <span>child count:{{ mes.frames ? mes.frames.length : 0 }}</span>
     <button @click="pushchild">click</button>
   </div>
 </template>
@@ -17,13 +17,14 @@ export default {
 
   props: {
     mes: {
-      type: Array
+      type: Object
     }
   },
 
   methods: {
     pushchild: function (e) {
-      this.mes.push([])
+      console.log(this.mes)
+      this.mes.frames.push([])
     }
   }
 }

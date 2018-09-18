@@ -2,7 +2,9 @@
   <div id="app">
     <span>normal count:{{ ary.length }}</span>
     <button @click="push">click</button>
-    <dataBinding :mes="msgs"/>
+    <div class="hoge" v-for="(msg) in msgs" v-bind:key="msg">
+      <dataBinding :mes="msg"/>
+    </div>
   </div>
 </template>
 
@@ -17,13 +19,25 @@ export default {
     return {
       msgs: [{
         name: 'text1',
-        count: 20
+        count: 20,
+        frames: [{
+          id: 20,
+          name: 'hoge1'
+        }]
       }, {
         name: 'text2',
-        count: 20
+        count: 20,
+        frames: [{
+          id: 20,
+          name: 'hoge1'
+        }]
       }, {
         name: 'text3',
-        count: 20
+        count: 20,
+        frames: [{
+          id: 20,
+          name: 'hoge1'
+        }]
       }],
       ary: ['1', '2', '3', '4']
     }
