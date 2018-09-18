@@ -3,7 +3,7 @@
     <span>normal count:{{ ary.length }}</span>
     <button @click="push">click</button>
     <div class="hoge" v-for="(msg) in msgs" v-bind:key="msg">
-      <dataBinding :mes="msg"/>
+      <dataBinding :mes="msg.frames"/>
     </div>
   </div>
 </template>
