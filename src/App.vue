@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <span>count:{{ ary.length }}</span>
-    <span>count:{{ msgs.length }}</span>
+    <span>normal count:{{ ary.length }}</span>
     <button @click="push">click</button>
-    <button @click="handleclick">click</button>
+    <dataBinding :mes="msgs"/>
   </div>
 </template>
 

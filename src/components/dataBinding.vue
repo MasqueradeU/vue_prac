@@ -1,9 +1,7 @@
 <template>
   <div class="databinding">
-    <span>count2:{{ count }}</span>
-    <button @click="handleclick2($event)">click2</button>
-    <count1
-    @child-incr="childCount"/>
+    <span>normal count:{{ mes ? mes.length : 0 }}</span>
+    <button @click="pushchild">click</button>
   </div>
 </template>
 
@@ -18,18 +16,14 @@ export default {
   name: 'databinding',
 
   props: {
-    count: {
-      type: Number
+    mes: {
+      type: Array
     }
   },
 
   methods: {
-    handleclick2: function (e) {
-      this.$emit('child-ev', this.count)
-    },
-
-    childCount: function (e) {
-      this.count += 1
+    pushchild: function (e) {
+      this.mes.push([])
     }
   }
 }
