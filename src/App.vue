@@ -1,13 +1,9 @@
 <template>
   <div id="app">
-    <div class="hoge" v-for="(msg, idx) in msgs" v-bind:key="msg">
-      <span>{{ msg.name }} count:{{ msg.count }}</span>
-      <button @click="handleclick(idx, $event)">click</button>
-      <dataBinding
-      @child-ev="countSynchronized(idx, $event)"
-      v-bind:count="msg.count"
-      :v-bind:idx="idx"/>
-    </div>
+    <span>count:{{ ary.length }}</span>
+    <span>count:{{ msgs.length }}</span>
+    <button @click="push">click</button>
+    <button @click="handleclick">click</button>
   </div>
 </template>
 
@@ -17,8 +13,6 @@ export default {
   components: {
     dataBinding: dB
   },
-
-  name: 'App',
 
   data () {
     return {
@@ -31,15 +25,17 @@ export default {
       }, {
         name: 'text3',
         count: 20
-      }]
+      }],
+      ary: ['1', '2', '3', '4']
     }
   },
   methods: {
-    handleclick: function (idx, e) {
-      this.msgs[idx].count += 1
+    push: function (e) {
+      this.ary.push('10')
     },
-    countSynchronized: function (idx, count, e) {
-      this.msgs[idx].count += count
+    handleclick: function (e) {
+      this.msgs.push([])
+      console.log(this.msgs)
     }
   }
 }
